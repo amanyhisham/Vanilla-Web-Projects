@@ -1,0 +1,1366 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>Brand</title>
+    <link rel="icon" type="image/png" href="./Img/logo.png" />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              brand: ['"Cormorant Garamond"', "serif"],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="font-sans">
+    <!--navbar sec1------------------------------------------------------------------------------------------------------------------------>
+    <nav
+      class="bg-[#fdfcfb] fixed w-full z-20 top-0 start-0 border-b border-[#f0e6e0]"
+    >
+      <div
+        class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-6 py-3"
+      >
+        <a href="./index.html" class="flex items-center space-x-3">
+          <img src="./Img/logo.png" class="h-12" alt="Brand Logo" />
+          <span
+            class="font-brand font-medium text-[1.6rem] tracking-[0.12em] text-neutral-800"
+            >Brand</span
+          >
+        </a>
+        <button
+          id="menu-toggle"
+          type="button"
+          class="inline-flex items-center p-2 w-10 h-10 justify-center text-neutral-500 rounded md:hidden hover:bg-neutral-100 focus:outline-none"
+        >
+          <svg
+            class="w-6 h-6"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-width="1.5"
+              d="M5 7h14M5 12h14M5 17h14"
+            />
+          </svg>
+        </button>
+        <div
+          class="hidden w-full md:flex md:w-auto md:items-center md:gap-8"
+          id="navbar-default"
+        >
+          <ul
+            class="flex flex-col md:flex-row md:items-center md:gap-7 mt-4 md:mt-0"
+          >
+            <li>
+              <a
+                href="./index.html"
+                class="font-brand font-medium text-[1.05rem] tracking-[0.08em] text-[#d4847a] block py-2 md:py-0"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="./About/about.html"
+                class="font-brand font-normal text-[1.05rem] tracking-[0.08em] text-neutral-700 hover:text-[#d4847a] transition-colors duration-200 block py-2 md:py-0"
+                >About</a
+              >
+            </li>
+            <li>
+              <a
+                href="./product/product.html"
+                class="font-brand font-normal text-[1.05rem] tracking-[0.08em] text-neutral-700 hover:text-[#d4847a] transition-colors duration-200 block py-2 md:py-0"
+                >Products</a
+              >
+            </li>
+            <li>
+              <a
+                href="./sales/sales.html"
+                class="font-brand font-normal text-[1.05rem] tracking-[0.08em] text-neutral-700 hover:text-[#d4847a] transition-colors duration-200 block py-2 md:py-0"
+                >Sales</a
+              >
+            </li>
+            <li>
+              <a
+                href="./ContactUs/contact.html"
+                class="font-brand font-normal text-[1.05rem] tracking-[0.08em] text-neutral-700 hover:text-[#d4847a] transition-colors duration-200 block py-2 md:py-0"
+                >Contact</a
+              >
+            </li>
+          </ul>
+          <div class="hidden md:block w-px h-6 bg-neutral-200"></div>
+          <div class="flex items-center gap-5 mt-4 md:mt-0">
+            <!-- Wishlist -->
+            <a
+              href="./product/wishlist.html"
+              class="relative text-neutral-500 hover:text-[#d4847a] transition-colors duration-200 cursor-pointer"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-[22px] h-[22px]"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="1.4"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                />
+              </svg>
+              <span
+                id="wishBadge"
+                class="absolute -top-1.5 -right-1.5 bg-[#d4847a] text-white text-[0.6rem] font-bold w-4 h-4 rounded-full flex items-center justify-center leading-none"
+                >0</span
+              >
+            </a>
+            <!-- Cart -->
+            <a
+              href="./product/cart.html"
+              class="relative text-neutral-500 hover:text-[#d4847a] transition-colors duration-200 cursor-pointer"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-[22px] h-[22px]"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="1.4"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4zM3 6h18M16 10a4 4 0 0 1-8 0"
+                />
+              </svg>
+              <span
+                id="cartBadge"
+                class="absolute -top-1.5 -right-1.5 bg-[#d4847a] text-white text-[0.6rem] font-bold w-4 h-4 rounded-full flex items-center justify-center leading-none"
+                >0</span
+              >
+            </a>
+            <button
+              id="authBtn"
+              class="font-brand font-medium tracking-[0.1em] text-[0.95rem] border border-[#d4847a] text-[#d4847a] hover:bg-[#d4847a] hover:text-white transition-all duration-300 px-5 py-1.5 rounded-sm cursor-pointer"
+            >
+              Sign Up
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="h-20"></div>
+    <!--End sec1------------------------------------------------------------------------------------------------------------------------>
+
+    <!--Hero section sec2------------------------------------------------------------------------------------------------------------------------>
+    <section class="text-gray-600 body-font">
+      <div
+        class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center"
+      >
+        <!-- Text Side -->
+        <div
+          class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center"
+        >
+          <h1
+            class="font-brand font-semibold text-[2rem] sm:text-[2.5rem] tracking-wide text-neutral-800 mb-4 leading-snug"
+          >
+            Discover Styles Made for You
+          </h1>
+          <p
+            class="font-sans text-base text-neutral-500 leading-relaxed mb-8 max-w-md"
+          >
+            Explore our curated collection of timeless fashion pieces — from
+            everyday essentials to statement looks. Dress the way you feel, shop
+            what you love, and celebrate every version of yourself.
+          </p>
+          <div class="flex justify-center md:justify-start">
+            <button
+              class="font-brand font-medium tracking-[0.1em] text-[1rem] bg-[#d4847a] text-white hover:bg-[#c27268] transition-all duration-300 px-8 py-2.5 rounded-sm cursor-pointer border-0"
+            >
+             <a href="product/product.html" class="text-white no-underline">  Shop Now</a>
+            </button>
+          </div>
+        </div>
+
+        <div class="lg:w-1/2 w-full">
+          <div
+            class="relative rounded-md overflow-hidden bg-[#f0e6e0] aspect-[4/3] flex items-center justify-center"
+          >
+            <img
+              src="./Img/home.jpg"
+              alt="Why trust us"
+              class="w-full h-full object-cover"
+              onerror="
+                this.style.display = 'none';
+                this.nextElementSibling.style.display = 'flex';
+              "
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--End sec2------------------------------------------------------------------------------------------------------------------------>
+
+    <!--Our Category sec3------------------------------------------------------------------------------------------------------------------------>
+    <div class="bg-white">
+      <div
+        class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8"
+      >
+        <h1
+          class="font-brand font-semibold text-[2rem] sm:text-[2.5rem] tracking-wide text-neutral-800 mb-4 leading-snug"
+        >
+          Sneak Peek Into Our Collection
+        </h1>
+        <div
+          class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8"
+        >
+          <div class="group relative">
+            <img
+              src="./Img/catagory1.jpg"
+              alt=""
+              class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-80"
+            />
+            <div class="mt-4">
+              <p class="mt-1 text-xl text-gray-900 font-brand">
+                Boho-Chic Elegance
+              </p>
+            </div>
+          </div>
+
+          <div class="group relative">
+            <img
+              src="./Img/catagory2.jpg"
+              alt=""
+              class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-80"
+            />
+            <div class="mt-4">
+              <p class="mt-1 text-xl text-gray-900 font-brand">
+                Curated For Your Closet
+              </p>
+            </div>
+          </div>
+
+          <div class="group relative">
+            <img
+              src="./Img/catagory3.jpg"
+              alt=""
+              class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-80"
+            />
+            <div class="mt-4">
+              <p class="mt-1 text-xl text-gray-900 font-brand">
+                Squad Goals & Style Solved
+              </p>
+            </div>
+          </div>
+
+          <div class="group relative">
+            <img
+              src="./Img/catagory4.jpg"
+              alt=""
+              class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-80"
+            />
+            <div class="mt-4">
+              <p class="mt-1 text-xl text-gray-900 font-brand">
+                Everyday Essentials
+              </p>
+            </div>
+          </div>
+
+          <div class="group relative">
+            <img
+              src="./Img/catagory5.jpg"
+              alt=""
+              class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-80"
+            />
+            <div class="mt-4">
+              <p class="mt-1 text-xl text-gray-900 font-brand">
+                Color Your World
+              </p>
+            </div>
+          </div>
+
+          <div class="group relative">
+            <img
+              src="./Img/catagory6.jpg"
+              alt=""
+              class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-80"
+            />
+            <div class="mt-4">
+              <p class="mt-1 text-xl text-gray-900 font-brand">
+                Elevate Your Looks
+              </p>
+            </div>
+          </div>
+
+          <div class="group relative">
+            <img
+              src="./Img/catagory7.jpg"
+              alt=""
+              class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-80"
+            />
+            <div class="mt-4">
+              <p class="mt-1 text-xl text-gray-900 font-brand">Flawless Fits</p>
+            </div>
+          </div>
+
+          <div class="group relative">
+            <img
+              src="./Img/catagory8.jpg"
+              alt=""
+              class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-80"
+            />
+            <div class="mt-4">
+              <p class="mt-1 text-xl text-gray-900 font-brand">
+                Unwind In Style
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--End sec3------------------------------------------------------------------------------------------------------------------------>
+
+    <!--sec4 Vedio shopping------------------------------------------------------------------------------------------------------------------------>
+    <section class="relative h-[400px] w-full overflow-hidden">
+      <video
+        class="absolute top-0 left-0 w-full h-full object-cover"
+        autoplay
+        muted
+        loop
+        playsinline
+      >
+        <source src="./Vedio/vedioShopping.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div class="relative z-10 flex items-center justify-center h-full w-full">
+        <h2 class="text-3xl font-brand text-white font-semibold">
+          Experience Shopping With Us
+        </h2>
+      </div>
+    </section>
+    <!--End sec4 Vedio------------------------------------------------------------------------------------------------------------------------>
+
+    <!--sec5 Why Trust Us------------------------------------------------------------------------------------------------------------------------>
+    <section class="bg-[#fdfcfb] py-20">
+      <div class="container mx-auto px-5">
+        <div class="flex flex-col lg:flex-row items-center gap-14">
+          <!-- Text + Icons Side -->
+          <div class="lg:w-1/2 w-full">
+            <h2
+              class="font-brand font-semibold text-[2rem] sm:text-[2.6rem] tracking-wide text-neutral-800 leading-snug mb-4"
+            >
+              Why Shop With Us?
+            </h2>
+            <p
+              class="font-sans text-base text-neutral-500 leading-relaxed mb-10 max-w-md"
+            >
+              We believe great fashion comes with great trust. From handpicked
+              pieces to seamless delivery — every detail is crafted with you in
+              mind.
+            </p>
+            <!-- Features Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
+              <!-- Free Shipping -->
+              <div class="flex flex-col items-start gap-3">
+                <div class="text-[#d4847a]">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-10 h-10"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="1.3"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z"
+                    />
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0H3"
+                    />
+                  </svg>
+                </div>
+                <p
+                  class="font-brand text-[1.1rem] font-medium text-neutral-800 tracking-wide"
+                >
+                  Free Shipping
+                </p>
+                <p class="font-sans text-sm text-neutral-500 leading-relaxed">
+                  Enjoy free delivery on all orders above a minimum — no hidden
+                  fees, no surprises.
+                </p>
+              </div>
+              <!-- Easy Returns -->
+              <div class="flex flex-col items-start gap-3">
+                <div class="text-[#d4847a]">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-10 h-10"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="1.3"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M16 15v-1a4 4 0 00-4-4H8m0 0l3 3m-3-3l3-3m9 14V5a2 2 0 00-2-2H6a2 2 0 00-2 2v16l4-2 4 2 4-2 4 2z"
+                    />
+                  </svg>
+                </div>
+                <p
+                  class="font-brand text-[1.1rem] font-medium text-neutral-800 tracking-wide"
+                >
+                  Easy Returns
+                </p>
+                <p class="font-sans text-sm text-neutral-500 leading-relaxed">
+                  Not happy? Return within 30 days — hassle-free, no questions
+                  asked.
+                </p>
+              </div>
+              <!-- Curated Quality -->
+              <div class="flex flex-col items-start gap-3">
+                <div class="text-[#d4847a]">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-10 h-10"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="1.3"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
+                    />
+                  </svg>
+                </div>
+                <p
+                  class="font-brand text-[1.1rem] font-medium text-neutral-800 tracking-wide"
+                >
+                  Curated Quality
+                </p>
+                <p class="font-sans text-sm text-neutral-500 leading-relaxed">
+                  Every piece is handpicked for quality, style, and a perfect
+                  fit you'll love.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Image Side -->
+          <div class="lg:w-1/2 w-full">
+            <div
+              class="relative rounded-md overflow-hidden bg-[#f0e6e0] aspect-[4/3] flex items-center justify-center"
+            >
+              <img
+                src="./Img/Trust.jpg"
+                alt="Why trust us"
+                class="w-full h-full object-cover"
+                onerror="
+                  this.style.display = 'none';
+                  this.nextElementSibling.style.display = 'flex';
+                "
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--End sec5------------------------------------------------------------------------------------------------------------------------>
+
+    <!--sec6 customerReview------------------------------------------------------------------------------------------------------------------------>
+    <section class="bg-white py-20">
+      <div class="container mx-auto px-5 max-w-7xl">
+        <h2
+          class="font-brand font-semibold text-[2rem] sm:text-[2.5rem] tracking-wide text-neutral-800 mb-2 leading-snug"
+        >
+          What Our Customers Say
+        </h2>
+        <p class="font-sans text-sm text-neutral-400 mb-12">
+          Real reviews from real shoppers who love what they found.
+        </p>
+
+        <div class="flex flex-col lg:flex-row gap-12">
+          <!-- Left: Rating Summary -->
+          <div class="lg:w-[320px] w-full flex-shrink-0">
+            <!-- Overall Score -->
+            <div class="flex items-center gap-3 mb-6">
+              <span
+                class="font-brand text-[3.5rem] font-semibold text-neutral-800 leading-none"
+                >4.3</span
+              >
+              <div>
+                <!-- Stars -->
+                <div class="flex gap-0.5 mb-1">
+                  <svg
+                    class="w-5 h-5 text-[#d4847a]"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    />
+                  </svg>
+                  <svg
+                    class="w-5 h-5 text-[#d4847a]"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    />
+                  </svg>
+                  <svg
+                    class="w-5 h-5 text-[#d4847a]"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    />
+                  </svg>
+                  <svg
+                    class="w-5 h-5 text-[#d4847a]"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    />
+                  </svg>
+                  <svg
+                    class="w-5 h-5 text-neutral-200"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    />
+                  </svg>
+                </div>
+                <p class="font-sans text-xs text-neutral-400">
+                  Based on 1,624 reviews
+                </p>
+              </div>
+            </div>
+
+            <!-- Rating Bars -->
+            <div class="flex flex-col gap-2 mb-10">
+              <!-- 5 stars -->
+              <div class="flex items-center gap-3">
+                <div class="flex gap-0.5 w-20 flex-shrink-0">
+                  <svg
+                    class="w-3.5 h-3.5 text-[#d4847a]"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    />
+                  </svg>
+                  <svg
+                    class="w-3.5 h-3.5 text-[#d4847a]"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    />
+                  </svg>
+                  <svg
+                    class="w-3.5 h-3.5 text-[#d4847a]"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    />
+                  </svg>
+                  <svg
+                    class="w-3.5 h-3.5 text-[#d4847a]"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    />
+                  </svg>
+                  <svg
+                    class="w-3.5 h-3.5 text-[#d4847a]"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    />
+                  </svg>
+                </div>
+                <div class="flex-1 bg-neutral-100 rounded-full h-2">
+                  <div
+                    class="bg-[#d4847a] h-2 rounded-full"
+                    style="width: 63%"
+                  ></div>
+                </div>
+                <span class="font-sans text-xs text-neutral-400 w-8 text-right"
+                  >63%</span
+                >
+              </div>
+
+              <!-- 4 stars -->
+              <div class="flex items-center gap-3">
+                <div class="flex gap-0.5 w-20 flex-shrink-0">
+                  <svg
+                    class="w-3.5 h-3.5 text-[#d4847a]"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    />
+                  </svg>
+                  <svg
+                    class="w-3.5 h-3.5 text-[#d4847a]"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    />
+                  </svg>
+                  <svg
+                    class="w-3.5 h-3.5 text-[#d4847a]"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    />
+                  </svg>
+                  <svg
+                    class="w-3.5 h-3.5 text-[#d4847a]"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    />
+                  </svg>
+                  <svg
+                    class="w-3.5 h-3.5 text-neutral-200"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    />
+                  </svg>
+                </div>
+                <div class="flex-1 bg-neutral-100 rounded-full h-2">
+                  <div
+                    class="bg-[#d4847a] h-2 rounded-full"
+                    style="width: 10%"
+                  ></div>
+                </div>
+                <span class="font-sans text-xs text-neutral-400 w-8 text-right"
+                  >10%</span
+                >
+              </div>
+
+              <!-- 3 stars -->
+              <div class="flex items-center gap-3">
+                <div class="flex gap-0.5 w-20 flex-shrink-0">
+                  <svg
+                    class="w-3.5 h-3.5 text-[#d4847a]"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    />
+                  </svg>
+                  <svg
+                    class="w-3.5 h-3.5 text-[#d4847a]"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    />
+                  </svg>
+                  <svg
+                    class="w-3.5 h-3.5 text-[#d4847a]"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    />
+                  </svg>
+                  <svg
+                    class="w-3.5 h-3.5 text-neutral-200"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    />
+                  </svg>
+                  <svg
+                    class="w-3.5 h-3.5 text-neutral-200"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    />
+                  </svg>
+                </div>
+                <div class="flex-1 bg-neutral-100 rounded-full h-2">
+                  <div
+                    class="bg-[#d4847a] h-2 rounded-full"
+                    style="width: 6%"
+                  ></div>
+                </div>
+                <span class="font-sans text-xs text-neutral-400 w-8 text-right"
+                  >6%</span
+                >
+              </div>
+
+              <!-- 2 stars -->
+              <div class="flex items-center gap-3">
+                <div class="flex gap-0.5 w-20 flex-shrink-0">
+                  <svg
+                    class="w-3.5 h-3.5 text-[#d4847a]"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    />
+                  </svg>
+                  <svg
+                    class="w-3.5 h-3.5 text-[#d4847a]"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    />
+                  </svg>
+                  <svg
+                    class="w-3.5 h-3.5 text-neutral-200"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    />
+                  </svg>
+                  <svg
+                    class="w-3.5 h-3.5 text-neutral-200"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    />
+                  </svg>
+                  <svg
+                    class="w-3.5 h-3.5 text-neutral-200"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    />
+                  </svg>
+                </div>
+                <div class="flex-1 bg-neutral-100 rounded-full h-2">
+                  <div
+                    class="bg-[#d4847a] h-2 rounded-full"
+                    style="width: 12%"
+                  ></div>
+                </div>
+                <span class="font-sans text-xs text-neutral-400 w-8 text-right"
+                  >12%</span
+                >
+              </div>
+
+              <!-- 1 star -->
+              <div class="flex items-center gap-3">
+                <div class="flex gap-0.5 w-20 flex-shrink-0">
+                  <svg
+                    class="w-3.5 h-3.5 text-[#d4847a]"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    />
+                  </svg>
+                  <svg
+                    class="w-3.5 h-3.5 text-neutral-200"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    />
+                  </svg>
+                  <svg
+                    class="w-3.5 h-3.5 text-neutral-200"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    />
+                  </svg>
+                  <svg
+                    class="w-3.5 h-3.5 text-neutral-200"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    />
+                  </svg>
+                  <svg
+                    class="w-3.5 h-3.5 text-neutral-200"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                    />
+                  </svg>
+                </div>
+                <div class="flex-1 bg-neutral-100 rounded-full h-2">
+                  <div
+                    class="bg-[#d4847a] h-2 rounded-full"
+                    style="width: 9%"
+                  ></div>
+                </div>
+                <span class="font-sans text-xs text-neutral-400 w-8 text-right"
+                  >9%</span
+                >
+              </div>
+            </div>
+
+            <!-- Share your thoughts -->
+            <div class="border-t border-[#f0e6e0] pt-8">
+              <p
+                class="font-brand text-[1.15rem] font-medium text-neutral-800 mb-1"
+              >
+                Share your thoughts
+              </p>
+              <p class="font-sans text-sm text-neutral-400 mb-4">
+                If you've shopped with us, we'd love to hear from you.
+              </p>
+              <button
+                class="w-full font-brand font-medium tracking-[0.08em] text-[0.95rem] border border-[#d4847a] text-[#d4847a] hover:bg-[#d4847a] hover:text-white transition-all duration-300 px-5 py-2 rounded-sm cursor-pointer"
+              >
+                Write a Review
+              </button>
+            </div>
+          </div>
+
+          <!-- Right: Review Cards -->
+          <div class="flex-1 flex flex-col divide-y divide-[#f0e6e0]">
+            <!-- Review 1 -->
+            <div class="py-8 first:pt-0">
+              <div class="flex items-center gap-3 mb-3">
+                <div
+                  class="w-10 h-10 rounded-full bg-[#f0e6e0] flex items-center justify-center overflow-hidden flex-shrink-0"
+                >
+                  <span
+                    class="font-brand text-[#d4847a] font-semibold text-base"
+                    >S</span
+                  >
+                </div>
+                <div>
+                  <p class="font-brand font-medium text-neutral-800 text-base">
+                    Sara Mohamed
+                  </p>
+                  <div class="flex gap-0.5 mt-0.5">
+                    <svg
+                      class="w-3.5 h-3.5 text-[#d4847a]"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                      />
+                    </svg>
+                    <svg
+                      class="w-3.5 h-3.5 text-[#d4847a]"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                      />
+                    </svg>
+                    <svg
+                      class="w-3.5 h-3.5 text-[#d4847a]"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                      />
+                    </svg>
+                    <svg
+                      class="w-3.5 h-3.5 text-[#d4847a]"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                      />
+                    </svg>
+                    <svg
+                      class="w-3.5 h-3.5 text-[#d4847a]"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <p
+                class="font-sans text-sm text-neutral-500 leading-relaxed italic"
+              >
+                The quality blew me away — the fabric feels so luxurious and the
+                fit is exactly as shown. I've already ordered two more pieces.
+                Definitely my new go-to brand.
+              </p>
+            </div>
+
+            <!-- Review 2 -->
+            <div class="py-8">
+              <div class="flex items-center gap-3 mb-3">
+                <div
+                  class="w-10 h-10 rounded-full bg-[#f0e6e0] flex items-center justify-center overflow-hidden flex-shrink-0"
+                >
+                  <span
+                    class="font-brand text-[#d4847a] font-semibold text-base"
+                    >N</span
+                  >
+                </div>
+                <div>
+                  <p class="font-brand font-medium text-neutral-800 text-base">
+                    Nour Ahmed
+                  </p>
+                  <div class="flex gap-0.5 mt-0.5">
+                    <svg
+                      class="w-3.5 h-3.5 text-[#d4847a]"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                      />
+                    </svg>
+                    <svg
+                      class="w-3.5 h-3.5 text-[#d4847a]"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                      />
+                    </svg>
+                    <svg
+                      class="w-3.5 h-3.5 text-[#d4847a]"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                      />
+                    </svg>
+                    <svg
+                      class="w-3.5 h-3.5 text-[#d4847a]"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                      />
+                    </svg>
+                    <svg
+                      class="w-3.5 h-3.5 text-[#d4847a]"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <p
+                class="font-sans text-sm text-neutral-500 leading-relaxed italic"
+              >
+                Shipping was super fast and the packaging felt so premium. You
+                can tell a lot of care goes into every order. I felt special
+                just unboxing it!
+              </p>
+            </div>
+
+            <!-- Review 3 -->
+            <div class="py-8">
+              <div class="flex items-center gap-3 mb-3">
+                <div
+                  class="w-10 h-10 rounded-full bg-[#f0e6e0] flex items-center justify-center overflow-hidden flex-shrink-0"
+                >
+                  <span
+                    class="font-brand text-[#d4847a] font-semibold text-base"
+                    >L</span
+                  >
+                </div>
+                <div>
+                  <p class="font-brand font-medium text-neutral-800 text-base">
+                    Laila Hassan
+                  </p>
+                  <div class="flex gap-0.5 mt-0.5">
+                    <svg
+                      class="w-3.5 h-3.5 text-[#d4847a]"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                      />
+                    </svg>
+                    <svg
+                      class="w-3.5 h-3.5 text-[#d4847a]"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                      />
+                    </svg>
+                    <svg
+                      class="w-3.5 h-3.5 text-[#d4847a]"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                      />
+                    </svg>
+                    <svg
+                      class="w-3.5 h-3.5 text-[#d4847a]"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                      />
+                    </svg>
+                    <svg
+                      class="w-3.5 h-3.5 text-neutral-200"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <p
+                class="font-sans text-sm text-neutral-500 leading-relaxed italic"
+              >
+                I love how the styles are so unique — I keep getting compliments
+                every time I wear something from here. The boho collection
+                especially is absolutely gorgeous.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--End sec6------------------------------------------------------------------------------------------------------------------------>
+
+    <!--Footer------------------------------------------------------------------------------------------------------------------------>
+    <footer class="bg-[#fdfcfb] border-t border-[#f0e6e0]">
+      <!-- Main Footer Content -->
+      <div
+        class="container px-5 py-16 mx-auto flex md:items-start md:flex-row md:flex-nowrap flex-wrap flex-col gap-10"
+      >
+        <!-- Brand Side -->
+        <div
+          class="w-56 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left"
+        >
+          <a
+            href="#"
+            class="flex items-center md:justify-start justify-center gap-2"
+          >
+            <img src="./Img/logo.png" class="h-8" alt="Brand Logo" />
+            <span
+              class="font-brand font-medium text-[1.3rem] tracking-[0.1em] text-neutral-800"
+              >Brand</span
+            >
+          </a>
+          <p class="mt-3 text-sm text-neutral-500 leading-relaxed">
+            Your go-to destination for timeless women's fashion — where every
+            outfit tells your story.
+          </p>
+        </div>
+
+        <!-- Links -->
+        <div class="flex-grow flex flex-wrap md:pr-10 md:text-left text-center">
+          <!-- Shop -->
+          <div class="lg:w-1/4 md:w-1/2 w-full px-4 mb-10">
+            <h2
+              class="font-brand font-medium tracking-widest text-neutral-800 text-base mb-6"
+            >
+              <span class="inline-block border-b border-[#d4847a] pb-1"
+                >Shop</span
+              >
+            </h2>
+            <nav class="flex flex-col gap-2">
+              <a
+                href="#"
+                class="text-sm text-neutral-500 hover:text-[#d4847a] transition-colors duration-200"
+                >New Arrivals</a
+              >
+              <a
+                href="#"
+                class="text-sm text-neutral-500 hover:text-[#d4847a] transition-colors duration-200"
+                >Best Sellers</a
+              >
+              <a
+                href="#"
+                class="text-sm text-neutral-500 hover:text-[#d4847a] transition-colors duration-200"
+                >Sale & Offers</a
+              >
+              <a
+                href="#"
+                class="text-sm text-neutral-500 hover:text-[#d4847a] transition-colors duration-200"
+                >Gift Cards</a
+              >
+            </nav>
+          </div>
+
+          <!-- Collections -->
+          <div class="lg:w-1/4 md:w-1/2 w-full px-4 mb-10">
+            <h2
+              class="font-brand font-medium tracking-widest text-neutral-800 text-base mb-6"
+            >
+              <span class="inline-block border-b border-[#d4847a] pb-1"
+                >Collections</span
+              >
+            </h2>
+            <nav class="flex flex-col gap-2">
+              <a
+                href="#"
+                class="text-sm text-neutral-500 hover:text-[#d4847a] transition-colors duration-200"
+                >Casual Wear</a
+              >
+              <a
+                href="#"
+                class="text-sm text-neutral-500 hover:text-[#d4847a] transition-colors duration-200"
+                >Evening & Formal</a
+              >
+              <a
+                href="#"
+                class="text-sm text-neutral-500 hover:text-[#d4847a] transition-colors duration-200"
+                >Boho & Chic</a
+              >
+              <a
+                href="#"
+                class="text-sm text-neutral-500 hover:text-[#d4847a] transition-colors duration-200"
+                >Seasonal Looks</a
+              >
+            </nav>
+          </div>
+
+          <!-- Help -->
+          <div class="lg:w-1/4 md:w-1/2 w-full px-4 mb-10">
+            <h2
+              class="font-brand font-medium tracking-widest text-neutral-800 text-base mb-6"
+            >
+              <span class="inline-block border-b border-[#d4847a] pb-1"
+                >Help</span
+              >
+            </h2>
+            <nav class="flex flex-col gap-2">
+              <a
+                href="#"
+                class="text-sm text-neutral-500 hover:text-[#d4847a] transition-colors duration-200"
+                >Shipping & Returns</a
+              >
+              <a
+                href="#"
+                class="text-sm text-neutral-500 hover:text-[#d4847a] transition-colors duration-200"
+                >Size Guide</a
+              >
+              <a
+                href="#"
+                class="text-sm text-neutral-500 hover:text-[#d4847a] transition-colors duration-200"
+                >Track My Order</a
+              >
+              <a
+                href="#"
+                class="text-sm text-neutral-500 hover:text-[#d4847a] transition-colors duration-200"
+                >FAQs</a
+              >
+            </nav>
+          </div>
+
+          <!-- About -->
+          <div class="lg:w-1/4 md:w-1/2 w-full px-4 mb-10">
+            <h2
+              class="font-brand font-medium tracking-widest text-neutral-800 text-base mb-6"
+            >
+              <span class="inline-block border-b border-[#d4847a] pb-1"
+                >About</span
+              >
+            </h2>
+            <nav class="flex flex-col gap-2">
+              <a
+                href="#"
+                class="text-sm text-neutral-500 hover:text-[#d4847a] transition-colors duration-200"
+                >Our Story</a
+              >
+              <a
+                href="#"
+                class="text-sm text-neutral-500 hover:text-[#d4847a] transition-colors duration-200"
+                >Sustainability</a
+              >
+              <a
+                href="#"
+                class="text-sm text-neutral-500 hover:text-[#d4847a] transition-colors duration-200"
+                >Careers</a
+              >
+              <a
+                href="#"
+                class="text-sm text-neutral-500 hover:text-[#d4847a] transition-colors duration-200"
+                >Contact Us</a
+              >
+            </nav>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="border-t border-[#f0e6e0] bg-[#fdfcfb]">
+        <div
+          class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row items-center justify-between"
+        >
+          <p class="text-neutral-400 text-sm text-center sm:text-left">
+            © 2026 Brand —
+            <a
+              href="https://www.linkedin.com/in/amanyhesham/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-neutral-500 ml-1 hover:text-[#d4847a] transition-colors duration-200"
+            >
+              @AmanyHesham
+            </a>
+          </p>
+
+          <!-- Social Icons -->
+          <span class="inline-flex gap-4 mt-3 sm:mt-0">
+            <!-- Facebook -->
+            <a
+              href="https://www.facebook.com/amany.hisham.90/?locale=ar_AR"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-neutral-400 hover:text-[#d4847a] transition-colors duration-200"
+            >
+              <svg fill="currentColor" class="w-5 h-5" viewBox="0 0 24 24">
+                <path
+                  d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"
+                />
+              </svg>
+            </a>
+
+            <!-- Twitter / X -->
+            <a
+              href="https://x.com/Amany_hesham1"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-neutral-400 hover:text-[#d4847a] transition-colors duration-200"
+            >
+              <svg fill="currentColor" class="w-5 h-5" viewBox="0 0 24 24">
+                <path
+                  d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"
+                />
+              </svg>
+            </a>
+
+            <!-- Instagram -->
+            <a
+              href="https://www.instagram.com/amany.hisham.90/?hl=ar"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-neutral-400 hover:text-[#d4847a] transition-colors duration-200"
+            >
+              <svg
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                class="w-5 h-5"
+                viewBox="0 0 24 24"
+              >
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                <path
+                  d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"
+                />
+              </svg>
+            </a>
+
+            <!-- LinkedIn -->
+            <a
+              href="https://www.linkedin.com/in/amanyhesham/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-neutral-400 hover:text-[#d4847a] transition-colors duration-200"
+            >
+              <svg fill="currentColor" class="w-5 h-5" viewBox="0 0 24 24">
+                <path
+                  stroke="none"
+                  d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"
+                />
+                <circle cx="4" cy="4" r="2" stroke="none" />
+              </svg>
+            </a>
+          </span>
+        </div>
+      </div>
+    </footer>
+    <!--End Footer------------------------------------------------------------------------------------------------------------------------>
+
+    <script src="home.js"></script>
+  </body>
+</html>

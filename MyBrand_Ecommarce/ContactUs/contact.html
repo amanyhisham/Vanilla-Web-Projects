@@ -1,0 +1,585 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>Brand — Contact</title>
+    <link rel="icon" type="image/png" href="../Img/logo.png" />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: { fontFamily: { brand: ['"Cormorant Garamond"', "serif"] } },
+        },
+      };
+    </script>
+  </head>
+  <body class="font-sans bg-white">
+    <!--navbar-->
+    <nav
+      class="bg-[#fdfcfb] fixed w-full z-20 top-0 start-0 border-b border-[#f0e6e0]"
+    >
+      <div
+        class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-6 py-3"
+      >
+        <a href="../index.html" class="flex items-center space-x-3">
+          <img src="../Img/logo.png" class="h-12" alt="Brand Logo" />
+          <span
+            class="font-brand font-medium text-[1.6rem] tracking-[0.12em] text-neutral-800"
+            >Brand</span
+          >
+        </a>
+        <button
+          id="menu-toggle"
+          type="button"
+          class="inline-flex items-center p-2 w-10 h-10 justify-center text-neutral-500 rounded md:hidden hover:bg-neutral-100 focus:outline-none"
+        >
+          <svg
+            class="w-6 h-6"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-width="1.5"
+              d="M5 7h14M5 12h14M5 17h14"
+            />
+          </svg>
+        </button>
+        <div
+          class="hidden w-full md:flex md:w-auto md:items-center md:gap-8"
+          id="navbar-default"
+        >
+          <ul
+            class="flex flex-col md:flex-row md:items-center md:gap-7 mt-4 md:mt-0"
+          >
+            <li>
+              <a
+                href="../index.html"
+                class="font-brand font-normal text-[1.05rem] tracking-[0.08em] text-neutral-700 hover:text-[#d4847a] transition-colors duration-200 block py-2 md:py-0"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="../About/about.html"
+                class="font-brand font-normal text-[1.05rem] tracking-[0.08em] text-neutral-700 hover:text-[#d4847a] transition-colors duration-200 block py-2 md:py-0"
+                >About</a
+              >
+            </li>
+            <li>
+              <a
+                href="../product/product.html"
+                class="font-brand font-normal text-[1.05rem] tracking-[0.08em] text-neutral-700 hover:text-[#d4847a] transition-colors duration-200 block py-2 md:py-0"
+                >Products</a
+              >
+            </li>
+            <li>
+              <a
+                href="../sales/sales.html"
+                class="font-brand font-normal text-[1.05rem] tracking-[0.08em] text-neutral-700 hover:text-[#d4847a] transition-colors duration-200 block py-2 md:py-0"
+                >Sales</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="font-brand font-medium text-[1.05rem] tracking-[0.08em] text-[#d4847a] block py-2 md:py-0"
+                >Contact</a
+              >
+            </li>
+          </ul>
+          <div class="hidden md:block w-px h-6 bg-neutral-200"></div>
+          <div class="flex items-center gap-5 mt-4 md:mt-0">
+            <!-- Wishlist -->
+            <a
+              href="../product/wishlist.html"
+              class="relative text-neutral-500 hover:text-[#d4847a] transition-colors duration-200 cursor-pointer"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-[22px] h-[22px]"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="1.4"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                />
+              </svg>
+              <span
+                id="wishBadge"
+                class="absolute -top-1.5 -right-1.5 bg-[#d4847a] text-white text-[0.6rem] font-bold w-4 h-4 rounded-full flex items-center justify-center leading-none"
+                >0</span
+              >
+            </a>
+            <!-- Cart -->
+            <a
+              href="../product/cart.html"
+              class="relative text-neutral-500 hover:text-[#d4847a] transition-colors duration-200 cursor-pointer"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-[22px] h-[22px]"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="1.4"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4zM3 6h18M16 10a4 4 0 0 1-8 0"
+                />
+              </svg>
+              <span
+                id="cartBadge"
+                class="absolute -top-1.5 -right-1.5 bg-[#d4847a] text-white text-[0.6rem] font-bold w-4 h-4 rounded-full flex items-center justify-center leading-none"
+                >0</span
+              >
+            </a>
+            <button
+              id="authBtn"
+              class="font-brand font-medium tracking-[0.1em] text-[0.95rem] border border-[#d4847a] text-[#d4847a] hover:bg-[#d4847a] hover:text-white transition-all duration-300 px-5 py-1.5 rounded-sm cursor-pointer"
+            >
+              Sign Up
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="h-20"></div>
+
+    <!--Contact Us Section-->
+    <section class="bg-white py-16 px-5">
+      <div class="container mx-auto max-w-7xl">
+        <h2
+          class="font-brand font-semibold text-[2rem] sm:text-[2.5rem] tracking-wide text-neutral-800 mb-2 leading-snug"
+        >
+          Contact Us
+        </h2>
+        <p
+          class="font-brand font-normal text-[1.05rem] text-neutral-500 mb-12 max-w-xl leading-relaxed"
+        >
+          We'd love to hear from you. Whether you have a question about an
+          order, a style you love, or just want to say hello — we're here for
+          you.
+        </p>
+        <div class="flex flex-col lg:flex-row gap-12 items-stretch">
+          <!-- Form -->
+          <div class="lg:w-1/2 w-full flex flex-col gap-6">
+            <div class="flex flex-col sm:flex-row gap-5">
+              <div class="flex-1">
+                <label
+                  for="name"
+                  class="block font-brand text-[1rem] text-neutral-700 mb-1.5 tracking-wide"
+                  >Full Name</label
+                >
+                <input
+                  type="text"
+                  id="name"
+                  placeholder="Your full name"
+                  class="w-full border border-[#f0e6e0] bg-[#fdfcfb] text-neutral-700 font-sans text-sm rounded-sm px-4 py-2.5 focus:outline-none focus:border-[#d4847a] transition-colors duration-200 placeholder-neutral-300"
+                  required
+                />
+              </div>
+              <div class="flex-1">
+                <label
+                  for="email"
+                  class="block font-brand text-[1rem] text-neutral-700 mb-1.5 tracking-wide"
+                  >Email Address</label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  placeholder="your@email.com"
+                  class="w-full border border-[#f0e6e0] bg-[#fdfcfb] text-neutral-700 font-sans text-sm rounded-sm px-4 py-2.5 focus:outline-none focus:border-[#d4847a] transition-colors duration-200 placeholder-neutral-300"
+                  required
+                />
+              </div>
+            </div>
+            <div>
+              <label
+                for="phone"
+                class="block font-brand text-[1rem] text-neutral-700 mb-1.5 tracking-wide"
+                >Phone Number</label
+              >
+              <input
+                type="tel"
+                id="phone"
+                placeholder="+20 10 0000 0000"
+                class="w-full border border-[#f0e6e0] bg-[#fdfcfb] text-neutral-700 font-sans text-sm rounded-sm px-4 py-2.5 focus:outline-none focus:border-[#d4847a] transition-colors duration-200 placeholder-neutral-300"
+              />
+            </div>
+            <div>
+              <label
+                for="subject"
+                class="block font-brand text-[1rem] text-neutral-700 mb-1.5 tracking-wide"
+                >Subject</label
+              >
+              <input
+                type="text"
+                id="subject"
+                placeholder="What is this about?"
+                class="w-full border border-[#f0e6e0] bg-[#fdfcfb] text-neutral-700 font-sans text-sm rounded-sm px-4 py-2.5 focus:outline-none focus:border-[#d4847a] transition-colors duration-200 placeholder-neutral-300"
+                required
+              />
+            </div>
+            <div>
+              <label
+                for="message"
+                class="block font-brand text-[1rem] text-neutral-700 mb-1.5 tracking-wide"
+                >Your Message</label
+              >
+              <textarea
+                id="message"
+                rows="6"
+                placeholder="Tell us how we can help you..."
+                class="w-full border border-[#f0e6e0] bg-[#fdfcfb] text-neutral-700 font-sans text-sm rounded-sm px-4 py-2.5 focus:outline-none focus:border-[#d4847a] transition-colors duration-200 placeholder-neutral-300 resize-none"
+              ></textarea>
+            </div>
+            <div>
+              <button
+                type="submit"
+                class="font-brand font-medium tracking-[0.1em] text-[1rem] bg-[#d4847a] text-white hover:bg-[#c27268] transition-all duration-300 px-8 py-2.5 rounded-sm cursor-pointer border-0"
+              >
+                Send Message
+              </button>
+            </div>
+          </div>
+          <!-- Image + Info -->
+          <div class="lg:w-1/2 w-full flex flex-col gap-6">
+            <div
+              class="relative rounded-md overflow-hidden flex-1 min-h-[280px] flex items-center justify-center"
+            >
+              <img
+                src="../Img/contact.png"
+                alt="Contact us"
+                class="w-full h-full object-contain absolute inset-0"
+                onerror="this.style.display = 'none'"
+              />
+            </div>
+            <div class="flex flex-col gap-4 pt-2">
+              <div class="flex items-start gap-3">
+                <div class="text-[#d4847a] mt-0.5 flex-shrink-0">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-5 h-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <p
+                    class="font-brand text-[1rem] text-neutral-700 font-medium"
+                  >
+                    Email Us
+                  </p>
+                  <p class="font-sans text-sm text-neutral-400">
+                    support@brand.com
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="text-[#d4847a] mt-0.5 flex-shrink-0">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-5 h-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <p
+                    class="font-brand text-[1rem] text-neutral-700 font-medium"
+                  >
+                    Call Us
+                  </p>
+                  <p class="font-sans text-sm text-neutral-400">
+                    +20 10 0000 0000
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="text-[#d4847a] mt-0.5 flex-shrink-0">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-5 h-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <p
+                    class="font-brand text-[1rem] text-neutral-700 font-medium"
+                  >
+                    Working Hours
+                  </p>
+                  <p class="font-sans text-sm text-neutral-400">
+                    Sat – Thu, 10:00 AM – 9:00 PM
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--Map-->
+    <div class="bg-white px-5 pb-20">
+      <div class="container mx-auto">
+        <h2
+          class="font-brand font-semibold text-[2rem] sm:text-[2.5rem] tracking-wide text-neutral-800 mb-8 leading-snug"
+        >
+          Our Location
+        </h2>
+        <div class="w-full rounded-md overflow-hidden border border-[#f0e6e0]">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1022.6138715168053!2d31.123225002567306!3d30.47143400283065!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145877cb0bfd367b%3A0xaa4368a2c0e95573!2z2LfYsdmK2YIg2KfZhNiq2LHYudmHINin2YTYrti22LHZiNmK2KkgLS0g2KfZhNmF2K3Yt9ipLCBNZW5vZmlhIEdvdmVybm9yYXRl!5e0!3m2!1sen!2seg!4v1774639275682!5m2!1sen!2seg"
+            width="100%"
+            height="450"
+            style="border: 0; display: block"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+
+    <!--Footer-->
+    <footer class="bg-[#fdfcfb] border-t border-[#f0e6e0]">
+      <div
+        class="container px-5 py-16 mx-auto flex md:items-start md:flex-row md:flex-nowrap flex-wrap flex-col gap-10"
+      >
+        <div
+          class="w-56 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left"
+        >
+          <a
+            href="#"
+            class="flex items-center md:justify-start justify-center gap-2"
+            ><img src="../Img/logo.png" class="h-8" alt="Brand Logo" /><span
+              class="font-brand font-medium text-[1.3rem] tracking-[0.1em] text-neutral-800"
+              >Brand</span
+            ></a
+          >
+          <p class="mt-3 text-sm text-neutral-500 leading-relaxed">
+            Your go-to destination for timeless women's fashion — where every
+            outfit tells your story.
+          </p>
+        </div>
+        <div class="flex-grow flex flex-wrap md:pr-10 md:text-left text-center">
+          <div class="lg:w-1/4 md:w-1/2 w-full px-4 mb-10">
+            <h2
+              class="font-brand font-medium tracking-widest text-neutral-800 text-base mb-6"
+            >
+              <span class="inline-block border-b border-[#d4847a] pb-1"
+                >Shop</span
+              >
+            </h2>
+            <nav class="flex flex-col gap-2">
+              <a
+                href="#"
+                class="text-sm text-neutral-500 hover:text-[#d4847a] transition-colors duration-200"
+                >New Arrivals</a
+              ><a
+                href="#"
+                class="text-sm text-neutral-500 hover:text-[#d4847a] transition-colors duration-200"
+                >Best Sellers</a
+              ><a
+                href="#"
+                class="text-sm text-neutral-500 hover:text-[#d4847a] transition-colors duration-200"
+                >Sale & Offers</a
+              ><a
+                href="#"
+                class="text-sm text-neutral-500 hover:text-[#d4847a] transition-colors duration-200"
+                >Gift Cards</a
+              >
+            </nav>
+          </div>
+          <div class="lg:w-1/4 md:w-1/2 w-full px-4 mb-10">
+            <h2
+              class="font-brand font-medium tracking-widest text-neutral-800 text-base mb-6"
+            >
+              <span class="inline-block border-b border-[#d4847a] pb-1"
+                >Collections</span
+              >
+            </h2>
+            <nav class="flex flex-col gap-2">
+              <a
+                href="#"
+                class="text-sm text-neutral-500 hover:text-[#d4847a] transition-colors duration-200"
+                >Casual Wear</a
+              ><a
+                href="#"
+                class="text-sm text-neutral-500 hover:text-[#d4847a] transition-colors duration-200"
+                >Evening & Formal</a
+              ><a
+                href="#"
+                class="text-sm text-neutral-500 hover:text-[#d4847a] transition-colors duration-200"
+                >Boho & Chic</a
+              ><a
+                href="#"
+                class="text-sm text-neutral-500 hover:text-[#d4847a] transition-colors duration-200"
+                >Seasonal Looks</a
+              >
+            </nav>
+          </div>
+          <div class="lg:w-1/4 md:w-1/2 w-full px-4 mb-10">
+            <h2
+              class="font-brand font-medium tracking-widest text-neutral-800 text-base mb-6"
+            >
+              <span class="inline-block border-b border-[#d4847a] pb-1"
+                >Help</span
+              >
+            </h2>
+            <nav class="flex flex-col gap-2">
+              <a
+                href="#"
+                class="text-sm text-neutral-500 hover:text-[#d4847a] transition-colors duration-200"
+                >Shipping & Returns</a
+              ><a
+                href="#"
+                class="text-sm text-neutral-500 hover:text-[#d4847a] transition-colors duration-200"
+                >Size Guide</a
+              ><a
+                href="#"
+                class="text-sm text-neutral-500 hover:text-[#d4847a] transition-colors duration-200"
+                >Track My Order</a
+              ><a
+                href="#"
+                class="text-sm text-neutral-500 hover:text-[#d4847a] transition-colors duration-200"
+                >FAQs</a
+              >
+            </nav>
+          </div>
+          <div class="lg:w-1/4 md:w-1/2 w-full px-4 mb-10">
+            <h2
+              class="font-brand font-medium tracking-widest text-neutral-800 text-base mb-6"
+            >
+              <span class="inline-block border-b border-[#d4847a] pb-1"
+                >About</span
+              >
+            </h2>
+            <nav class="flex flex-col gap-2">
+              <a
+                href="#"
+                class="text-sm text-neutral-500 hover:text-[#d4847a] transition-colors duration-200"
+                >Our Story</a
+              ><a
+                href="#"
+                class="text-sm text-neutral-500 hover:text-[#d4847a] transition-colors duration-200"
+                >Sustainability</a
+              ><a
+                href="#"
+                class="text-sm text-neutral-500 hover:text-[#d4847a] transition-colors duration-200"
+                >Careers</a
+              ><a
+                href="#"
+                class="text-sm text-neutral-500 hover:text-[#d4847a] transition-colors duration-200"
+                >Contact Us</a
+              >
+            </nav>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-[#f0e6e0] bg-[#fdfcfb]">
+        <div
+          class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row items-center justify-between"
+        >
+          <p class="text-neutral-400 text-sm text-center sm:text-left">
+            © 2026 Brand —
+            <a
+              href="https://www.linkedin.com/in/amanyhesham/"
+              target="_blank"
+              class="text-neutral-500 ml-1 hover:text-[#d4847a] transition-colors duration-200"
+              >@AmanyHesham</a
+            >
+          </p>
+          <span class="inline-flex gap-4 mt-3 sm:mt-0"
+            ><a
+              href="https://www.facebook.com/amany.hisham.90/?locale=ar_AR"
+              target="_blank"
+              class="text-neutral-400 hover:text-[#d4847a] transition-colors duration-200"
+              ><svg fill="currentColor" class="w-5 h-5" viewBox="0 0 24 24">
+                <path
+                  d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"
+                /></svg></a
+            ><a
+              href="https://x.com/Amany_hesham1"
+              target="_blank"
+              class="text-neutral-400 hover:text-[#d4847a] transition-colors duration-200"
+              ><svg fill="currentColor" class="w-5 h-5" viewBox="0 0 24 24">
+                <path
+                  d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"
+                /></svg></a
+            ><a
+              href="https://www.instagram.com/amany.hisham.90/?hl=ar"
+              target="_blank"
+              class="text-neutral-400 hover:text-[#d4847a] transition-colors duration-200"
+              ><svg
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                class="w-5 h-5"
+                viewBox="0 0 24 24"
+              >
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                <path
+                  d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"
+                /></svg></a
+            ><a
+              href="https://www.linkedin.com/in/amanyhesham/"
+              target="_blank"
+              class="text-neutral-400 hover:text-[#d4847a] transition-colors duration-200"
+              ><svg fill="currentColor" class="w-5 h-5" viewBox="0 0 24 24">
+                <path
+                  stroke="none"
+                  d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"
+                />
+                <circle cx="4" cy="4" r="2" stroke="none" /></svg></a
+          ></span>
+        </div>
+      </div>
+    </footer>
+
+    <script src="contact.js"></script>
+  </body>
+</html>
