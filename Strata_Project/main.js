@@ -12,12 +12,12 @@ const getProduct = (id) => PRODUCTS.find((p) => p.id === id);
 const formatPrice = (n) => `${SITE_CONFIG.currency} ${n.toLocaleString('en-US')}`;
 
 // ================= Images =================
-// imgTag('glass1', 'alt', 'classes')  -> finds images/glass1.jpeg / Glass1.jpg / ... automatically.
+// imgTag('glass2.jpeg', 'alt', 'classes') -> loads the exact asset first.
 // You can give several names separated by "|", the first one found is used:
-//   imgTag('F&Q|FAQ|question1', ...)
+//   imgTag('question.jpg|faq.jpg', ...)
 // If nothing is found, a placeholder is shown.
 const FALLBACK_IMG = 'https://placehold.co/600x450/F1E2CF/3E4A2A?text=STRATA';
-const IMG_EXTS = ['jpeg', 'jpg', 'png', 'webp', 'avif', 'jfif', 'JPG', 'JPEG', 'PNG'];
+const IMG_EXTS = ['jpeg', 'jpg', 'png', 'webp', 'avif', 'jfif'];
 
 function imgCandidates(spec) {
   const names = [];
@@ -26,8 +26,13 @@ function imgCandidates(spec) {
     [n, cap, n.toLowerCase()].forEach((v) => { if (!names.includes(v)) names.push(v); });
   });
   const list = [];
-  IMG_EXTS.forEach((e) => names.forEach((n) => list.push(`images/${encodeURIComponent(n)}.${e}`)));
-  return list;
+  names.forEach((n) => {
+    const hasExtension = /\.(jpeg|jpg|png|webp|avif|jfif)$/i.test(n);
+    if (hasExtension) list.push(`images/${encodeURIComponent(n)}`);
+    const base = hasExtension ? n.replace(/\.[^.]+$/, '') : n;
+    IMG_EXTS.forEach((e) => list.push(`images/${encodeURIComponent(base)}.${e}`));
+  });
+  return [...new Set(list)];
 }
 
 const imgTag = (spec, alt, cls = '') =>

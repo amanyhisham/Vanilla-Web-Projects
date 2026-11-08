@@ -20,65 +20,65 @@ SITE_CONFIG.whatsappNumber = SITE_CONFIG.whatsappNumber.replace(/\D/g, '');
 
 // ===== Catalog (the ONLY place you edit products) =====
 // Each line = one product = one image in /images.
-// "image" is the file name without extension (example: glass2 -> images/glass2.jpeg).
+// "image" is the exact lowercase file name (example: glass2.jpeg -> images/glass2.jpeg).
 // To add a product: put the image in /images, then add one line at the end of that category.
 const CATALOG = {
   glass: {
     material: 'Recycled glass',
     items: [
-      { image: 'glass2',  name: 'Mosaic Glass Planter',   price: 450, description: 'A round planter covered in reclaimed mirror and glass pieces.' },
-      { image: 'glass3',  name: 'Mosaic Glass Set',       price: 600, description: 'Colorful mosaic vases and dishes from broken glass.' },
-      { image: 'glass4',  name: 'Painted Glass Bottle',   price: 180, description: 'A hand-painted bottle with a leaf pattern.' },
-      { image: 'glass5',  name: 'Pastel Glass Vases',     price: 220, description: 'A soft set of reused glass bottles and vases.' },
-      { image: 'glass6',  name: 'Amber Bottle Vases',     price: 200, description: 'Old amber bottles turned into rustic flower vases.' },
-      { image: 'glass7',  name: 'Lace Bottle Vase',       price: 160, description: 'A bottle wrapped in natural burlap and lace.' },
-      { image: 'glass8',  name: 'Colored Glass Vases',    price: 240, description: 'Small colored bottles for dried flowers.' },
-      { image: 'glass9',  name: 'Glass Storage Jars',     price: 210, description: 'Reused glass jars for storage and decor.' },
-      { image: 'glass10', name: 'Green Glass Vase',       price: 280, description: 'A large green glass vase from a reclaimed bottle.' },
-      { image: 'glass11', name: 'Bottle Table Lamp',      price: 420, description: 'A table lamp built from a glass bottle.' },
-      { image: 'glass12', name: 'Blue Glass Bottle Vase', price: 230, description: 'A tall blue-green bottle vase.' },
-      { image: 'glass13', name: 'Lace Bottle Lamp',       price: 450, description: 'A lamp made from a green bottle with a lace shade.' },
-      { image: 'glass14', name: 'Wrapped Candle Jars',    price: 190, description: 'Glass jars with wire details, made for candles.' },
+      { image: 'glass2.jpeg',  name: 'Mosaic Glass Planter',   price: 450, description: 'A round planter covered in reclaimed mirror and glass pieces.' },
+      { image: 'glass3.jpeg',  name: 'Mosaic Glass Set',       price: 600, description: 'Colorful mosaic vases and dishes from broken glass.' },
+      { image: 'glass4.jpg',   name: 'Painted Glass Bottle',   price: 180, description: 'A hand-painted bottle with a leaf pattern.' },
+      { image: 'glass5.jpg',   name: 'Pastel Glass Vases',     price: 220, description: 'A soft set of reused glass bottles and vases.' },
+      { image: 'glass6.jpg',   name: 'Amber Bottle Vases',     price: 200, description: 'Old amber bottles turned into rustic flower vases.' },
+      { image: 'glass7.jpg',   name: 'Lace Bottle Vase',       price: 160, description: 'A bottle wrapped in natural burlap and lace.' },
+      { image: 'glass8.jpg',   name: 'Colored Glass Vases',    price: 240, description: 'Small colored bottles for dried flowers.' },
+      { image: 'glass9.jpg',   name: 'Glass Storage Jars',     price: 210, description: 'Reused glass jars for storage and decor.' },
+      { image: 'glass10.jpg',  name: 'Green Glass Vase',       price: 280, description: 'A large green glass vase from a reclaimed bottle.' },
+      { image: 'glass11.jpg',  name: 'Bottle Table Lamp',      price: 420, description: 'A table lamp built from a glass bottle.' },
+      { image: 'glass12.jpg',  name: 'Blue Glass Bottle Vase', price: 230, description: 'A tall blue-green bottle vase.' },
+      { image: 'glass13.jpg',  name: 'Lace Bottle Lamp',       price: 450, description: 'A lamp made from a green bottle with a lace shade.' },
+      { image: 'glass14.jpg',  name: 'Wrapped Candle Jars',    price: 190, description: 'Glass jars with wire details, made for candles.' },
     ],
   },
   fabric: {
     material: 'Textile leftovers',
     items: [
-      { image: 'fabric1', name: 'Patchwork Tote Bag',    price: 350, description: 'A colorful tote stitched from fabric leftovers.' },
-      { image: 'fabric2', name: 'Patchwork Rug',         price: 400, description: 'A bright quilted rug made from recycled fabric.' },
-      { image: 'fabric3', name: 'Patchwork Handbag',     price: 380, description: 'A handbag stitched from fabric squares.' },
-      { image: 'fabric5', name: 'Denim Cushion',         price: 280, description: 'A cushion made from old jeans.' },
-      { image: 'fabric6', name: 'Woven Fabric Clutch',   price: 150, description: 'A small woven bag from fabric strips.' },
-      { image: 'fabric7', name: 'Denim Pocket Cushion',  price: 300, description: 'A cushion decorated with recycled denim pieces.' },
-      { image: 'fabric8', name: 'Patchwork Canvas Tote', price: 260, description: 'A canvas tote with a patchwork front.' },
+      { image: 'fabric1.jpeg', name: 'Patchwork Tote Bag',    price: 350, description: 'A colorful tote stitched from fabric leftovers.' },
+      { image: 'fabric2.jpeg', name: 'Patchwork Rug',         price: 400, description: 'A bright quilted rug made from recycled fabric.' },
+      { image: 'fabric3.jpeg', name: 'Patchwork Handbag',     price: 380, description: 'A handbag stitched from fabric squares.' },
+      { image: 'fabric5.jpg',  name: 'Denim Cushion',         price: 280, description: 'A cushion made from old jeans.' },
+      { image: 'fabric6.jpg',  name: 'Woven Fabric Clutch',   price: 150, description: 'A small woven bag from fabric strips.' },
+      { image: 'fabric7.jpg',  name: 'Denim Pocket Cushion',  price: 300, description: 'A cushion decorated with recycled denim pieces.' },
+      { image: 'fabric8.jpg',  name: 'Patchwork Canvas Tote', price: 260, description: 'A canvas tote with a patchwork front.' },
     ],
   },
   plastic: {
     material: 'Recycled plastic',
     items: [
-      { image: 'plastic1', name: 'Bottle Cap Lamp',      price: 500, description: 'A table lamp made from colorful bottle caps.' },
-      { image: 'plastic2', name: 'Crochet Plastic Bag',  price: 280, description: 'A bag made from plastic bottles and crochet.' },
-      { image: 'plastic3', name: 'Painted Black Bottles', price: 200, description: 'Reused bottles painted with a golden leaf pattern.' },
-      { image: 'plastic4', name: 'Painted Decor Set',    price: 320, description: 'Decor pieces made from reused plastic.' },
-      { image: 'plastic5', name: 'Blue Planter Set',     price: 350, description: 'Stackable sculpted planters from recycled plastic.' },
-      { image: 'plastic6', name: 'Painted Bottle Vases', price: 180, description: 'Bottles decorated with colorful hand-painted shapes.' },
+      { image: 'plastic1.jpeg', name: 'Bottle Cap Lamp',       price: 500, description: 'A table lamp made from colorful bottle caps.' },
+      { image: 'plastic2.jpeg', name: 'Crochet Plastic Bag',   price: 280, description: 'A bag made from plastic bottles and crochet.' },
+      { image: 'plastic3.jpg',  name: 'Painted Black Bottles', price: 200, description: 'Reused bottles painted with a golden leaf pattern.' },
+      { image: 'plastic4.jpg',  name: 'Painted Decor Set',     price: 320, description: 'Decor pieces made from reused plastic.' },
+      { image: 'plastic5.jpg',  name: 'Blue Planter Set',      price: 350, description: 'Stackable sculpted planters from recycled plastic.' },
+      { image: 'plastic6.jpg',  name: 'Painted Bottle Vases',  price: 180, description: 'Bottles decorated with colorful hand-painted shapes.' },
     ],
   },
   metal: {
     material: 'Recycled metal',
     items: [
-      { image: 'metal1',  name: 'Soda Can Lamp',          price: 550, description: 'A lamp made from soda cans and aluminum pull-tabs.' },
-      { image: 'metal2',  name: 'Pull-Tab Boxes',         price: 220, description: 'Small lidded boxes made from aluminum pull-tabs.' },
-      { image: 'metal3',  name: 'Can-Ring Basket',        price: 260, description: 'A hanging basket made from can rings.' },
-      { image: 'metal4',  name: 'Pull-Tab Handbag',       price: 480, description: 'A handbag woven from aluminum pull-tabs.' },
-      { image: 'metal5',  name: 'Painted Tin Lamp',       price: 420, description: 'A decorated tin can turned into a lamp.' },
-      { image: 'metal6',  name: 'Tin Can Planters',       price: 150, description: 'Tin cans reused as small plant pots.' },
-      { image: 'metal7',  name: 'Scrap Metal Robot',      price: 650, description: 'A small robot sculpture from scrap metal parts.' },
-      { image: 'metal8',  name: 'Metal Turtle Sculpture', price: 700, description: 'A turtle sculpture from reclaimed metal.' },
-      { image: 'metal9',  name: 'Pull-Tab Sheep',         price: 600, description: 'A sheep sculpture made from pull-tabs.' },
-      { image: 'metal10', name: 'Chain Owl Sculpture',    price: 450, description: 'An owl sculpture from chain and scrap metal.' },
-      { image: 'metal11', name: 'Painted Tin Planters',   price: 240, description: 'Hand-painted tin cans used as planters.' },
-      { image: 'metal12', name: 'Aluminum Can Lamp',      price: 550, description: 'A lamp from aluminum cans and pull-tabs.' },
+      { image: 'metal1.jpeg', name: 'Soda Can Lamp',          price: 550, description: 'A lamp made from soda cans and aluminum pull-tabs.' },
+      { image: 'metal2.jpeg', name: 'Pull-Tab Boxes',         price: 220, description: 'Small lidded boxes made from aluminum pull-tabs.' },
+      { image: 'metal3.jpeg', name: 'Can-Ring Basket',        price: 260, description: 'A hanging basket made from can rings.' },
+      { image: 'metal4.jpeg', name: 'Pull-Tab Handbag',       price: 480, description: 'A handbag woven from aluminum pull-tabs.' },
+      { image: 'metal5.jpg',  name: 'Painted Tin Lamp',       price: 420, description: 'A decorated tin can turned into a lamp.' },
+      { image: 'metal6.jpg',  name: 'Tin Can Planters',       price: 150, description: 'Tin cans reused as small plant pots.' },
+      { image: 'metal7.jpg',  name: 'Scrap Metal Robot',      price: 650, description: 'A small robot sculpture from scrap metal parts.' },
+      { image: 'metal8.jpg',  name: 'Metal Turtle Sculpture', price: 700, description: 'A turtle sculpture from reclaimed metal.' },
+      { image: 'metal9.jpg',  name: 'Pull-Tab Sheep',         price: 600, description: 'A sheep sculpture made from pull-tabs.' },
+      { image: 'metal10.jpg', name: 'Chain Owl Sculpture',    price: 450, description: 'An owl sculpture from chain and scrap metal.' },
+      { image: 'metal11.jpg', name: 'Painted Tin Planters',   price: 240, description: 'Hand-painted tin cans used as planters.' },
+      { image: 'metal12.jpg', name: 'Aluminum Can Lamp',      price: 550, description: 'A lamp from aluminum cans and pull-tabs.' },
     ],
   },
 };
@@ -111,11 +111,11 @@ const PRODUCTS = [];
 })();
 
 // Category cards on the home page.
-// Images: Glass.jpeg, Fabric.jpeg, Plastic.jpeg, Metal.jpeg in /images
+// Images: glass.jpeg, fabric.jpeg, plastic.jpeg, metal.jpg in /images
 // (if one is missing, the page automatically uses the first product image of that category)
 const CATEGORIES = [
-  { id: 'glass',   name: 'Glass Creations',   tagline: 'From glass waste to timeless beauty.', image: 'glass|glass1' },
-  { id: 'fabric',  name: 'Fabric Creations',  tagline: 'From old clothes to new treasures.',   image: 'fabric|fabric1' },
-  { id: 'plastic', name: 'Plastic Creations', tagline: 'From plastic waste to fresh ideas.',   image: 'plastic|plastic1' },
-  { id: 'metal',   name: 'Metal Creations',   tagline: 'From scrap metal to artistic pieces.', image: 'metal|metal1' },
+  { id: 'glass',   name: 'Glass Creations',   tagline: 'From glass waste to timeless beauty.', image: 'glass.jpeg|glass2.jpeg' },
+  { id: 'fabric',  name: 'Fabric Creations',  tagline: 'From old clothes to new treasures.',   image: 'fabric.jpeg|fabric1.jpeg' },
+  { id: 'plastic', name: 'Plastic Creations', tagline: 'From plastic waste to fresh ideas.',   image: 'plastic.jpeg|plastic1.jpeg' },
+  { id: 'metal',   name: 'Metal Creations',   tagline: 'From scrap metal to artistic pieces.', image: 'metal.jpg|metal1.jpeg' },
 ];
