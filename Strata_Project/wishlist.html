@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STRATA | Don't Waste It. Reimagine It.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="tailwind-config.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-cream text-forest font-sans">
+  <div id="navbar"></div>
+
+  <main>
+    <section class="hero-bg">
+      <div class="max-w-7xl mx-auto px-4 py-12">
+        <h1 class="font-serif text-4xl md:text-5xl">My Wishlist</h1>
+        <p class="mt-3 text-forest/80">Your favorite sustainable creations, all in one place.</p>
+        <p id="wcount" class="inline-block mt-4 bg-forest text-white text-sm px-4 py-2 rounded-full"></p>
+      </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-4 py-10">
+      <div id="wgrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+
+      <div id="wempty" class="hidden text-center bg-beige rounded-3xl py-14 px-6">
+        <div class="text-5xl mb-3">🤍</div>
+        <h2 class="font-serif text-3xl">Your Wishlist is Empty</h2>
+        <p class="mt-2 text-forest/80">You haven't saved any favorite creations yet.</p>
+        <a href="shop.html" class="inline-block mt-6 bg-forest text-white px-6 py-3 rounded-full hover:bg-olive transition">Explore Our Products →</a>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer"></div>
+
+  <script src="products.js"></script>
+  <script src="main.js"></script>
+  <script>
+    function renderWishlist() {
+      const items = getWishlist().map(getProduct).filter(Boolean);
+      document.getElementById('wgrid').innerHTML = items.map(productCard).join('');
+      document.getElementById('wempty').classList.toggle('hidden', items.length > 0);
+      document.getElementById('wcount').textContent =
+        `${items.length} Favorite Product${items.length === 1 ? '' : 's'}`;
+    }
+    document.addEventListener('wishlist:changed', renderWishlist);
+    renderWishlist();
+  </script>
+</body>
+</html>

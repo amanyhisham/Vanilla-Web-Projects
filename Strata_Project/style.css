@@ -1,0 +1,56 @@
+html { scroll-behavior: smooth; }
+
+/* Warm hero background */
+.hero-bg {
+  background: linear-gradient(135deg, #F8E7D2 0%, #FBF3E9 60%);
+}
+
+/* Card */
+.card {
+  background: #FFFaf3;
+  border-radius: 1rem;
+  box-shadow: 0 4px 14px rgba(62, 74, 42, 0.10);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(62, 74, 42, 0.18);
+}
+
+/* Wishlist heart */
+.fav-btn svg { transition: all .2s ease; }
+.fav-btn.is-fav svg { fill: #b91c1c; stroke: #b91c1c; }
+
+/* Toast message */
+#toast {
+  position: fixed; bottom: 24px; left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  opacity: 0; pointer-events: none;
+  transition: all .3s ease; z-index: 100;
+}
+#toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+/* Icon circle (Why Choose section) */
+.icon-circle {
+  width: 56px; height: 56px; margin: 0 auto 12px;
+  border-radius: 9999px; background: #F1E2CF; color: #3E4A2A;
+  display: flex; align-items: center; justify-content: center;
+}
+
+/* ===== Images =====
+   .img-cover = the image fills its whole frame (frames have the same size in every card).
+   The picture is centered, so only the extra edges are trimmed - it is never stretched. */
+img[data-base]:not([data-logo]) {
+  object-fit: contain !important;
+  background: transparent;
+}
+img[data-base].img-cover {
+  object-fit: cover !important;
+  object-position: center;
+}
+.img-box { position: relative; overflow: hidden; }
+.img-box > img { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+/* ===== Logo: original colors. The white background of the file
+   disappears and becomes the same color as the page ===== */
+.logo-img { mix-blend-mode: multiply; }

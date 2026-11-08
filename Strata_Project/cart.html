@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart | STRATA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="tailwind-config.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-cream text-forest font-sans">
+  <div id="navbar"></div>
+
+  <main>
+    <section class="hero-bg">
+      <div class="max-w-7xl mx-auto px-4 py-12">
+        <h1 class="font-serif text-4xl md:text-5xl">Your Shopping Cart</h1>
+        <p class="mt-3 text-forest/80">Review your selected creations before completing your order.</p>
+      </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-4 py-10">
+      <!-- Empty state -->
+      <div id="empty" class="hidden text-center bg-beige rounded-3xl py-14 px-6">
+        <div class="icon-circle"><svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/></svg></div>
+        <h2 class="font-serif text-3xl">Your Cart is Empty</h2>
+        <p class="mt-2 text-forest/80">Looks like you haven't added any creations yet!</p>
+        <a href="shop.html" class="inline-block mt-6 bg-forest text-white px-6 py-3 rounded-full hover:bg-olive transition">Start Shopping →</a>
+      </div>
+
+      <!-- Cart content -->
+      <div id="content" class="grid lg:grid-cols-3 gap-8 hidden">
+        <!-- Items -->
+        <div class="lg:col-span-2 card">
+          <div class="flex items-center justify-between p-5 border-b border-beige">
+            <h2 id="items-title" class="font-serif text-2xl">Cart Items</h2>
+            <button id="clear-cart" class="text-sm text-red-700 hover:underline">Clear Cart</button>
+          </div>
+          <div id="items"></div>
+        </div>
+
+        <!-- Summary + form -->
+        <div class="space-y-6">
+          <div class="bg-forest text-cream rounded-2xl p-6 shadow-lg">
+            <h2 class="font-serif text-2xl mb-4">Order Summary</h2>
+            <div class="flex justify-between text-sm py-1"><span id="sum-label">Subtotal</span><span id="sum-sub"></span></div>
+            <div class="flex justify-between text-sm py-1"><span>Delivery Fee</span><span id="sum-fee"></span></div>
+            <div class="flex justify-between items-center border-t border-cream/20 mt-3 pt-3">
+              <span class="font-serif text-xl">Total Amount</span>
+              <span id="sum-total" class="bg-beige text-forest font-bold px-4 py-1 rounded-full"></span>
+            </div>
+          </div>
+
+          <div class="card p-6">
+            <h2 class="font-serif text-2xl mb-4">Delivery Details</h2>
+            <div class="space-y-4 text-sm">
+              <div>
+                <label for="f_name" class="font-medium">Full Name <span class="text-red-700">*</span></label>
+                <input id="f_name" type="text" placeholder="Enter your full name" class="mt-1 w-full rounded-xl border border-beige bg-white px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-olive">
+                <p data-err="name" class="hidden text-xs text-red-700 mt-1"></p>
+              </div>
+              <div>
+                <label for="f_phone" class="font-medium">Phone Number <span class="text-red-700">*</span></label>
+                <input id="f_phone" type="tel" placeholder="Enter your phone number" class="mt-1 w-full rounded-xl border border-beige bg-white px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-olive">
+                <p data-err="phone" class="hidden text-xs text-red-700 mt-1"></p>
+              </div>
+              <div>
+                <label for="f_email" class="font-medium">Email Address (Optional)</label>
+                <input id="f_email" type="email" placeholder="Enter your email" class="mt-1 w-full rounded-xl border border-beige bg-white px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-olive">
+                <p data-err="email" class="hidden text-xs text-red-700 mt-1"></p>
+              </div>
+              <div>
+                <label for="f_address" class="font-medium">Delivery Address <span class="text-red-700">*</span></label>
+                <input id="f_address" type="text" placeholder="Enter your delivery address" class="mt-1 w-full rounded-xl border border-beige bg-white px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-olive">
+                <p data-err="address" class="hidden text-xs text-red-700 mt-1"></p>
+              </div>
+              <div>
+                <label for="f_notes" class="font-medium">Additional Notes (Optional)</label>
+                <textarea id="f_notes" rows="2" placeholder="Any special instructions..." class="mt-1 w-full rounded-xl border border-beige bg-white px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-olive"></textarea>
+              </div>
+            </div>
+
+            <button id="confirm" class="mt-6 w-full bg-forest text-white py-3 rounded-full hover:bg-olive transition font-medium">
+              Confirm Order via WhatsApp →
+            </button>
+            <p class="text-xs text-brown mt-3">This is an order request. Your details will be sent to us on WhatsApp, and we will confirm payment and delivery with you directly.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer"></div>
+
+  <script src="products.js"></script>
+  <script src="main.js"></script>
+  <script>
+    const itemsEl = document.getElementById('items');
+    const fields = {};
+    ['name', 'phone', 'email', 'address', 'notes'].forEach((k) => (fields[k] = document.getElementById('f_' + k)));
+
+    function render() {
+      const cart = getCart().filter((i) => getProduct(i.id));
+      const isEmpty = cart.length === 0;
+      document.getElementById('empty').classList.toggle('hidden', !isEmpty);
+      document.getElementById('content').classList.toggle('hidden', isEmpty);
+      if (isEmpty) return;
+
+      itemsEl.innerHTML = cart.map((i) => {
+        const p = getProduct(i.id);
+        return `
+        <div class="flex flex-wrap items-center gap-4 p-4 border-b border-beige last:border-0">
+          ${imgTag(p.image, p.name, 'w-20 h-20 rounded-xl object-cover')}
+          <div class="flex-1 min-w-[140px]">
+            <h3 class="font-semibold">${p.name}</h3>
+            <p class="text-xs text-brown capitalize">${p.category}</p>
+            <p class="text-sm">${formatPrice(p.price)}</p>
+          </div>
+          <div class="flex items-center gap-2 rounded-full bg-beige px-2 py-1">
+            <button data-act="dec" data-id="${p.id}" aria-label="Decrease quantity" class="w-7 h-7 rounded-full hover:bg-white">−</button>
+            <span class="w-6 text-center">${i.qty}</span>
+            <button data-act="inc" data-id="${p.id}" aria-label="Increase quantity" class="w-7 h-7 rounded-full hover:bg-white">+</button>
+          </div>
+          <p class="w-24 text-right font-bold">${formatPrice(p.price * i.qty)}</p>
+          <button data-act="remove" data-id="${p.id}" aria-label="Remove ${p.name}" class="w-9 h-9 rounded-full bg-red-50 text-red-700 hover:bg-red-100 flex items-center justify-center">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M19 6l-1 14H6L5 6"/></svg>
+          </button>
+        </div>`;
+      }).join('');
+
+      const sub = cartSubtotal();
+      const fee = SITE_CONFIG.deliveryFee;
+      document.getElementById('items-title').textContent = `Cart Items (${cartCount()})`;
+      document.getElementById('sum-label').textContent = `Subtotal (${cartCount()} items)`;
+      document.getElementById('sum-sub').textContent = formatPrice(sub);
+      document.getElementById('sum-fee').textContent = formatPrice(fee);
+      document.getElementById('sum-total').textContent = formatPrice(sub + fee);
+    }
+
+    itemsEl.addEventListener('click', (e) => {
+      const b = e.target.closest('button[data-act]');
+      if (!b) return;
+      const { act, id } = b.dataset;
+      const item = getCart().find((i) => i.id === id);
+      if (!item) return;
+      if (act === 'remove') removeFromCart(id);
+      if (act === 'dec') updateQty(id, item.qty - 1);
+      if (act === 'inc') {
+        if (item.qty >= getProduct(id).stock) return toast(`Only ${getProduct(id).stock} available`, 'error');
+        updateQty(id, item.qty + 1);
+      }
+    });
+
+    document.getElementById('clear-cart').addEventListener('click', () => {
+      if (confirm('Remove all items from your cart?')) clearCart();
+    });
+    document.addEventListener('cart:changed', render);
+
+    // ===== Validation =====
+    const rules = {
+      name: (v) => v.trim().length >= 3 || 'Please enter your full name',
+      phone: (v) => /^\+?[0-9\s-]{8,15}$/.test(v.trim()) || 'Please enter a valid phone number',
+      address: (v) => v.trim().length >= 8 || 'Please enter your delivery address',
+      email: (v) => !v.trim() || /^\S+@\S+\.\S+$/.test(v.trim()) || 'Please enter a valid email',
+    };
+    function validate() {
+      let ok = true;
+      for (const k in rules) {
+        const r = rules[k](fields[k].value);
+        const err = document.querySelector(`[data-err="${k}"]`);
+        if (r !== true) { err.textContent = r; err.classList.remove('hidden'); ok = false; }
+        else err.classList.add('hidden');
+      }
+      return ok;
+    }
+
+    // ===== WhatsApp order =====
+    document.getElementById('confirm').addEventListener('click', () => {
+      if (getCart().length === 0) return toast('Your cart is empty', 'error');
+      if (!validate()) return toast('Please fix the highlighted fields', 'error');
+
+      const fee = SITE_CONFIG.deliveryFee;
+      const sub = cartSubtotal();
+      const lines = getCart().map((i, n) => {
+        const p = getProduct(i.id);
+        return `${n + 1}. ${p.name} x${i.qty} = ${formatPrice(p.price * i.qty)}`;
+      });
+
+      const msg = [
+        `*New Order Request - ${SITE_CONFIG.brand}*`,
+        '',
+        `Name: ${fields.name.value.trim()}`,
+        `Phone: ${fields.phone.value.trim()}`,
+        `Address: ${fields.address.value.trim()}`,
+        fields.email.value.trim() ? `Email: ${fields.email.value.trim()}` : null,
+        fields.notes.value.trim() ? `Notes: ${fields.notes.value.trim()}` : null,
+        '',
+        '*Items:*',
+        ...lines,
+        '',
+        `Subtotal: ${formatPrice(sub)}`,
+        `Delivery: ${formatPrice(fee)}`,
+        `*Total: ${formatPrice(sub + fee)}*`,
+      ].filter((l) => l !== null).join('\n');
+
+      const url = `https://wa.me/${SITE_CONFIG.whatsappNumber}?text=${encodeURIComponent(msg)}`;
+      const w = window.open(url, '_blank');
+      if (!w) location.href = url; // if the browser blocked the new tab
+      toast('Opening WhatsApp... press Send to place your order');
+    });
+
+    render();
+  </script>
+</body>
+</html>

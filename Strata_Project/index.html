@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STRATA | Don't Waste It. Reimagine It.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="tailwind-config.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-cream text-forest font-sans">
+  <div id="navbar"></div>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero-bg">
+      <div class="max-w-7xl mx-auto px-4 py-14 md:py-20 grid md:grid-cols-2 gap-10 items-center">
+        <div>
+          <p class="text-brown tracking-widest text-sm uppercase mb-3">Handmade • Upcycled • Unique</p>
+          <h1 class="font-serif text-4xl md:text-6xl leading-tight">Don't Waste It.<br>Reimagine It.</h1>
+          <p class="mt-5 text-forest/80 max-w-md">STRATA turns discarded glass, plastic, metal and fabric into beautiful, handmade pieces for your home and everyday life.</p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="shop.html" class="bg-forest text-white px-6 py-3 rounded-full hover:bg-olive transition">Explore Collection</a>
+            <a href="#story" class="border border-forest px-6 py-3 rounded-full hover:bg-forest hover:text-white transition">Discover Our Story</a>
+          </div>
+        </div>
+        <div class="grid grid-cols-2 grid-rows-2 gap-3 h-[340px] md:h-[460px]">
+          <img src="images/home1.jpg" data-base="home1" data-ext="0" alt="STRATA handmade piece" class="img-cover row-span-2 h-full w-full rounded-2xl shadow-lg">
+          <img src="images/home2.jpg" data-base="home2" data-ext="0" alt="STRATA handmade piece" class="img-cover h-full w-full rounded-2xl shadow-lg">
+          <img src="images/home3.jpg" data-base="home3" data-ext="0" alt="STRATA handmade piece" class="img-cover h-full w-full rounded-2xl shadow-lg">
+        </div>
+      </div>
+    </section>
+
+    <!-- Video -->
+    <section class="max-w-5xl mx-auto px-4 py-12">
+      <h2 class="font-serif text-3xl text-center mb-6">Watch How We Create</h2>
+      <div class="rounded-3xl overflow-hidden shadow-lg bg-beige aspect-video flex items-center justify-center">
+        <video controls preload="metadata" class="w-full h-full object-cover">
+          <source src="videos/story.mp4" type="video/mp4">
+          Your browser does not support video.
+        </video>
+      </div>
+      <p class="text-center text-xs text-brown mt-2">Video coming soon</p>
+    </section>
+
+    <!-- Story -->
+    <section id="story" class="max-w-7xl mx-auto px-4 py-12 grid md:grid-cols-2 gap-10 items-center">
+      <div class="img-box rounded-3xl shadow-lg h-80 md:h-[420px]"><img src="images/about.jpg" data-base="about" data-ext="0" alt="About STRATA" class="img-cover"></div>
+      <div>
+        <h2 class="font-serif text-3xl md:text-4xl">Our Story, Our Mission</h2>
+        <p class="mt-4 text-forest/80">At STRATA, we collect discarded materials and transform them into creative, handmade products. Every piece is a second chance: what was once waste becomes something beautiful, useful and unique.</p>
+        <a href="shop.html" class="inline-block mt-6 bg-forest text-white px-6 py-3 rounded-full hover:bg-olive transition">Shop the Collection</a>
+      </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="max-w-7xl mx-auto px-4 py-10">
+      <h2 class="font-serif text-3xl text-center mb-8">Our Four Recycling Categories</h2>
+      <div id="categories" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+    </section>
+
+    <!-- Featured products -->
+    <section class="max-w-7xl mx-auto px-4 py-12">
+      <div class="flex items-end justify-between mb-8">
+        <h2 class="font-serif text-3xl">Featured Products</h2>
+        <a href="shop.html" class="text-sm text-olive hover:underline">View all →</a>
+      </div>
+      <div id="featured" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+    </section>
+
+    <!-- Why choose -->
+    <section class="max-w-7xl mx-auto px-4 py-12">
+      <h2 class="font-serif text-3xl text-center mb-8">Why Choose STRATA?</h2>
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-5 text-center">
+        <div class="card p-6">
+          <div class="icon-circle"><svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></div>
+          <h3 class="font-semibold">Sustainable Materials</h3><p class="text-sm text-brown mt-1">Every piece starts from reused material.</p>
+        </div>
+        <div class="card p-6">
+          <div class="icon-circle"><svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><path d="M8.12 8.12 12 12"/><path d="M20 4 8.12 15.88"/><circle cx="6" cy="18" r="3"/><path d="M14.8 14.8 20 20"/></svg></div>
+          <h3 class="font-semibold">Handmade Creativity</h3><p class="text-sm text-brown mt-1">Crafted by hand with care.</p>
+        </div>
+        <div class="card p-6">
+          <div class="icon-circle"><svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12l4 6-10 13L2 9Z"/><path d="M11 3 8 9l4 13 4-13-3-6"/><path d="M2 9h20"/></svg></div>
+          <h3 class="font-semibold">Unique Designs</h3><p class="text-sm text-brown mt-1">No two pieces are exactly alike.</p>
+        </div>
+        <div class="card p-6">
+          <div class="icon-circle"><svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg></div>
+          <h3 class="font-semibold">Environmental Impact</h3><p class="text-sm text-brown mt-1">Less waste, more beauty.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Transformation -->
+    <section class="max-w-7xl mx-auto px-4 py-12">
+      <div class="bg-beige rounded-3xl p-8 md:p-12">
+        <h2 class="font-serif text-3xl md:text-4xl">See the Transformation</h2>
+        <p class="mt-2 text-forest/80">From discarded materials to beautiful creations, in three steps.</p>
+        <div class="grid md:grid-cols-3 gap-5 mt-8">
+          <div class="bg-cream rounded-2xl p-6"><p class="text-brown font-semibold">01</p><h3 class="font-serif text-xl">Collect</h3><p class="text-sm mt-1 text-forest/80">We gather glass, plastic, metal and fabric that would be thrown away.</p></div>
+          <div class="bg-cream rounded-2xl p-6"><p class="text-brown font-semibold">02</p><h3 class="font-serif text-xl">Transform</h3><p class="text-sm mt-1 text-forest/80">Each material is cleaned, cut, shaped and reimagined by hand.</p></div>
+          <div class="bg-cream rounded-2xl p-6"><p class="text-brown font-semibold">03</p><h3 class="font-serif text-xl">Create</h3><p class="text-sm mt-1 text-forest/80">The result: a finished, useful and beautiful product.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials (demo) -->
+    <section class="max-w-7xl mx-auto px-4 py-12">
+      <h2 class="font-serif text-3xl text-center">What Our Customers Say</h2>
+      <p class="text-center text-xs text-brown mt-1 mb-8">Sample reviews (demo content, to be replaced with real ones)</p>
+      <div class="grid md:grid-cols-3 gap-5">
+        <div class="card p-6"><p class="text-amber-500">★★★★★</p><p class="mt-2 text-sm">“Beautiful, eco-friendly and unique. I love my vase!”</p><p class="mt-3 text-xs text-brown">Customer name</p></div>
+        <div class="card p-6"><p class="text-amber-500">★★★★★</p><p class="mt-2 text-sm">“The patchwork bag is gorgeous and well made.”</p><p class="mt-3 text-xs text-brown">Customer name</p></div>
+        <div class="card p-6"><p class="text-amber-500">★★★★★</p><p class="mt-2 text-sm">“Such a lovely idea. The lamp looks amazing at night.”</p><p class="mt-3 text-xs text-brown">Customer name</p></div>
+      </div>
+    </section>
+
+    <!-- FAQ: الأسئلة على ناحية والصورة على الناحية التانية -->
+    <section class="max-w-7xl mx-auto px-4 py-12 grid md:grid-cols-2 gap-10 items-stretch">
+      <div>
+        <h2 class="font-serif text-3xl mb-6">Frequently Asked Questions</h2>
+        <div class="space-y-3">
+          <details class="card p-4"><summary class="cursor-pointer font-semibold">What is STRATA?</summary><p class="mt-2 text-sm text-forest/80">A creative recycling brand that turns discarded materials into handmade, useful and beautiful products.</p></details>
+          <details class="card p-4"><summary class="cursor-pointer font-semibold">What materials do you recycle?</summary><p class="mt-2 text-sm text-forest/80">Glass, plastic, metal and fabric.</p></details>
+          <details class="card p-4"><summary class="cursor-pointer font-semibold">Are all products handmade?</summary><p class="mt-2 text-sm text-forest/80">Yes, every piece is crafted by hand, so small variations make each one unique.</p></details>
+          <details class="card p-4"><summary class="cursor-pointer font-semibold">How can I place an order?</summary><p class="mt-2 text-sm text-forest/80">Add products to your cart, fill in your delivery details, and confirm. Your order is sent to us on WhatsApp.</p></details>
+          <details class="card p-4"><summary class="cursor-pointer font-semibold">How does delivery work?</summary><p class="mt-2 text-sm text-forest/80">After we receive your WhatsApp order, we confirm the details, payment method and delivery with you directly.</p></details>
+        </div>
+        <a href="contact.html" class="inline-block mt-6 bg-forest text-white px-6 py-3 rounded-full hover:bg-olive transition">Have more questions? Contact Us</a>
+      </div>
+      <div class="img-box rounded-3xl shadow-lg min-h-[320px]"><img src="images/Question.jpg" data-base="Question|question1|FAQ|F&Q" data-ext="0" alt="Questions about STRATA" class="img-cover"></div>
+    </section>
+  </main>
+
+  <div id="footer"></div>
+
+  <script src="products.js"></script>
+  <script src="main.js"></script>
+  <script>
+    document.getElementById('categories').innerHTML = CATEGORIES.map((c) => `
+      <a href="shop.html?category=${c.id}" class="card overflow-hidden group flex flex-col h-full">
+        <div class="img-box aspect-square">${imgTag(c.image, c.name, 'img-cover group-hover:scale-105 transition duration-500')}</div>
+        <div class="p-4 text-center flex-1">
+          <h3 class="font-serif text-xl">${c.name}</h3>
+          <p class="text-sm text-brown mt-1">${c.tagline}</p>
+          <span class="inline-block mt-3 text-sm bg-forest text-white px-4 py-1.5 rounded-full">Explore →</span>
+        </div>
+      </a>`).join('');
+
+    document.getElementById('featured').innerHTML = PRODUCTS.slice(0, 6).map(productCard).join('');
+  </script>
+</body>
+</html>

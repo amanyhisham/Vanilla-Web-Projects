@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | STRATA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="tailwind-config.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-cream text-forest font-sans">
+  <div id="navbar"></div>
+
+  <main>
+    <section class="hero-bg">
+      <div class="max-w-7xl mx-auto px-4 py-12">
+        <h1 class="font-serif text-4xl md:text-5xl">Let's Connect</h1>
+        <p class="mt-3 text-forest/80 max-w-xl">We'd love to hear from you. Have a question about our handmade creations, recycling process, or an order? Get in touch with us.</p>
+      </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-4 py-10 grid lg:grid-cols-3 gap-8">
+      <!-- Form -->
+      <form id="contact-form" novalidate class="lg:col-span-2 card p-6 md:p-8 space-y-4 text-sm">
+        <h2 class="font-serif text-2xl">Send Us a Message</h2>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div>
+            <label for="c_name" class="font-medium">Full Name <span class="text-red-700">*</span></label>
+            <input id="c_name" type="text" placeholder="Enter your full name" class="mt-1 w-full rounded-xl border border-beige bg-white px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-olive">
+            <p data-err="name" class="hidden text-xs text-red-700 mt-1"></p>
+          </div>
+          <div>
+            <label for="c_email" class="font-medium">Email Address <span class="text-red-700">*</span></label>
+            <input id="c_email" type="email" placeholder="Enter your email address" class="mt-1 w-full rounded-xl border border-beige bg-white px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-olive">
+            <p data-err="email" class="hidden text-xs text-red-700 mt-1"></p>
+          </div>
+        </div>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div>
+            <label for="c_phone" class="font-medium">Phone Number (Optional)</label>
+            <input id="c_phone" type="tel" placeholder="Enter your phone number" class="mt-1 w-full rounded-xl border border-beige bg-white px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-olive">
+          </div>
+          <div>
+            <label for="c_subject" class="font-medium">Subject <span class="text-red-700">*</span></label>
+            <select id="c_subject" class="mt-1 w-full rounded-xl border border-beige bg-white px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-olive">
+              <option value="">Select a subject</option>
+              <option>Order question</option>
+              <option>Product question</option>
+              <option>Custom request</option>
+              <option>Other</option>
+            </select>
+            <p data-err="subject" class="hidden text-xs text-red-700 mt-1"></p>
+          </div>
+        </div>
+        <div>
+          <label for="c_message" class="font-medium">Message <span class="text-red-700">*</span></label>
+          <textarea id="c_message" rows="5" placeholder="Write your message here..." class="mt-1 w-full rounded-xl border border-beige bg-white px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-olive"></textarea>
+          <p data-err="message" class="hidden text-xs text-red-700 mt-1"></p>
+        </div>
+        <button id="send-btn" type="submit" class="bg-forest text-white px-8 py-3 rounded-full hover:bg-olive transition disabled:opacity-60">Send Message →</button>
+      </form>
+
+      <!-- Info -->
+      <div class="space-y-4">
+        <h2 class="font-serif text-2xl">Contact Information</h2>
+        <div class="card p-5"><p class="font-semibold">Business Phone</p><a id="i-phone" class="text-sm text-brown hover:underline"></a></div>
+        <div class="card p-5"><p class="font-semibold">Business Email</p><a id="i-email" class="text-sm text-brown hover:underline break-all"></a></div>
+        <div class="card p-5"><p class="font-semibold">WhatsApp</p><a id="i-wa" target="_blank" rel="noopener" class="text-sm text-brown hover:underline"></a></div>
+        <div class="card p-5"><p class="font-semibold">Address</p><p id="i-address" class="text-sm text-brown"></p><p id="i-note" class="text-xs text-brown/80 mt-1"></p></div>
+        <div class="flex gap-3">
+          <a id="i-ig" target="_blank" rel="noopener" class="flex-1 text-center card py-3 text-sm hover:text-olive">Instagram</a>
+          <a id="i-fb" target="_blank" rel="noopener" class="flex-1 text-center card py-3 text-sm hover:text-olive">Facebook</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Find us -->
+    <section class="max-w-7xl mx-auto px-4 pb-6">
+      <div class="card p-6 grid md:grid-cols-3 gap-6 items-center">
+        <div>
+          <h2 class="font-serif text-2xl">Find Us</h2>
+          <p class="text-sm text-forest/80 mt-2">Visit us and explore our handmade, upcycled creations in person.</p>
+          <p id="find-address" class="text-sm text-brown mt-3"></p>
+          <a id="directions" target="_blank" rel="noopener" class="inline-block mt-4 bg-forest text-white px-6 py-3 rounded-full hover:bg-olive transition text-sm">Get Directions →</a>
+        </div>
+        <iframe id="map" title="STRATA location map" loading="lazy" class="md:col-span-2 w-full h-72 rounded-2xl border-0"></iframe>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer"></div>
+
+  <script src="products.js"></script>
+  <script src="main.js"></script>
+  <script>
+    const c = SITE_CONFIG;
+    const $ = (id) => document.getElementById(id);
+
+    // Fill contact info from SITE_CONFIG (products.js)
+    $('i-phone').textContent = c.phone;   $('i-phone').href = `tel:+${c.whatsappNumber}`;
+    $('i-email').textContent = c.email;   $('i-email').href = `mailto:${c.email}`;
+    $('i-wa').textContent = c.phone;      $('i-wa').href = `https://wa.me/${c.whatsappNumber}`;
+    $('i-address').textContent = c.address;
+    $('i-note').textContent = c.addressNote || '';
+    $('find-address').textContent = c.address;
+    $('i-ig').href = c.instagram;
+    $('i-fb').href = c.facebook;
+    $('directions').href = c.mapLink;
+    $('map').src = `https://www.google.com/maps?q=${encodeURIComponent(c.mapQuery)}&output=embed`;
+
+    // Form validation
+    const rules = {
+      name: (v) => v.trim().length >= 3 || 'Please enter your full name',
+      email: (v) => /^\S+@\S+\.\S+$/.test(v.trim()) || 'Please enter a valid email',
+      subject: (v) => v !== '' || 'Please select a subject',
+      message: (v) => v.trim().length >= 10 || 'Please write a message (at least 10 characters)',
+    };
+
+    $('contact-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      let ok = true;
+      for (const k in rules) {
+        const r = rules[k]($('c_' + k).value);
+        const err = document.querySelector(`[data-err="${k}"]`);
+        if (r !== true) { err.textContent = r; err.classList.remove('hidden'); ok = false; }
+        else err.classList.add('hidden');
+      }
+      if (!ok) return toast('Please fix the highlighted fields', 'error');
+
+      const data = {
+        name: $('c_name').value.trim(),
+        email: $('c_email').value.trim(),
+        phone: $('c_phone').value.trim(),
+        subject: $('c_subject').value,
+        message: $('c_message').value.trim(),
+      };
+
+      // Formspree not set up yet: open the email app as a temporary fallback
+      if (c.formEndpoint.includes('YOUR_FORM_ID')) {
+        const body = `Name: ${data.name}\nEmail: ${data.email}\nPhone: ${data.phone}\n\n${data.message}`;
+        location.href = `mailto:${c.email}?subject=${encodeURIComponent(data.subject)}&body=${encodeURIComponent(body)}`;
+        return;
+      }
+
+      const btn = $('send-btn');
+      btn.disabled = true;
+      btn.textContent = 'Sending...';
+      try {
+        const res = await fetch(c.formEndpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify(data),
+        });
+        if (!res.ok) throw new Error();
+        toast('Thank you! Your message has been sent.');
+        e.target.reset();
+      } catch {
+        toast('Something went wrong. Please try again.', 'error');
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Send Message →';
+      }
+    });
+  </script>
+</body>
+</html>
